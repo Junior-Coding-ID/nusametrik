@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NUSAMETRIK — Indonesia in Numbers</title>
+<meta name="description" content="NUSAMETRIK: Indonesia's people, economy, provinces and connectivity in verified numbers. Figures as published by 26 November 2026.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-page="index">
+<header class="top">
+  <div class="bar">
+    <a class="brand" href="index.html">NUSA<b>METRIK</b></a>
+    <span class="edition">2025 ANNUAL EDITION</span>
+    <nav class="main" id="mainNav" aria-label="Sections">
+      <a href="index.html" aria-current="page">Overview</a>
+      <a href="economy.html">Economy</a>
+      <a href="people.html">People</a>
+      <a href="provinces.html">Provinces</a>
+      <a href="connectivity.html">Connectivity</a>
+      <a href="sources.html">Sources</a>
+    </nav>
+    <div class="controls">
+      <button type="button" id="themeBtn" aria-label="Toggle dark or light theme">☾ Dark</button>
+      <button type="button" id="langBtn" aria-label="Switch language">ID</button>
+      <button type="button" class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="mainNav">☰ Menu</button>
+    </div>
+  </div>
+</header>
+<div class="wrap">
+  <section class="hero">
+    <div class="tagline" data-en="Indonesia in Numbers" data-id="Indonesia dalam Angka">Indonesia in Numbers</div>
+    <h1 data-en="One country. Thousands of stories in data." data-id="Satu negara. Ribuan cerita dalam data.">One country. Thousands of stories in data.</h1>
+    <p class="lede" data-en="284 million people across 38 provinces and 17,000+ islands — the economy, the people, the regions and the networks that connect them, each figure traced to its official source and year." data-id="284 juta penduduk di 38 provinsi dan 17.000+ pulau — ekonomi, penduduk, daerah, dan jaringan yang menghubungkannya, setiap angka dilacak ke sumber resmi dan tahunnya.">284 million people across 38 provinces and 17,000+ islands — the economy, the people, the regions and the networks that connect them, each figure traced to its official source and year.</p>
+    <span class="fresh" data-en="Figures as published by 26 November 2026 · Full-year 2025 releases that did not exist yet are shown as the latest published value, with its true period." data-id="Angka sesuai rilis resmi hingga 26 November 2026 · Rilis setahun penuh 2025 yang belum terbit ditampilkan sebagai nilai terbit terbaru, dengan periode sebenarnya.">Figures as published by 26 November 2026 · Full-year 2025 releases that did not exist yet are shown as the latest published value, with its true period.</span>
+  </section>
+
+  <section aria-label="Key indicators">
+    <div class="kpis">
+      <div class="kpi"><div class="kpi-label" data-en="Population" data-id="Penduduk">Population</div><div class="kpi-value num">284.44m</div><div class="kpi-sub">Mid-2025 estimate · BPS</div><div class="kpi-note">Java holds 55.6% of all Indonesians.</div></div>
+      <div class="kpi"><div class="kpi-label" data-en="Nominal GDP" data-id="PDB nominal">Nominal GDP</div><div class="kpi-value num">Rp22,139T</div><div class="kpi-sub">2024 · BPS — US$1.40T</div><div class="kpi-note">Rp78.62m per person in 2024.</div></div>
+      <div class="kpi"><div class="kpi-label" data-en="GDP growth" data-id="Pertumbuhan PDB">GDP growth</div><div class="kpi-value num">5.04%</div><div class="kpi-sub">Q3 2025, year-on-year · BPS</div><div class="kpi-note">Jan–Sep 2025 cumulative: 5.01%.</div></div>
+      <div class="kpi"><div class="kpi-label" data-en="Inflation" data-id="Inflasi">Inflation</div><div class="kpi-value num">2.86%</div><div class="kpi-sub">October 2025, year-on-year · BPS</div><div class="kpi-note">Inside Bank Indonesia's 2.5% ± 1% target.</div></div>
+      <div class="kpi"><div class="kpi-label" data-en="Unemployment" data-id="Pengangguran">Unemployment</div><div class="kpi-value num">4.85%</div><div class="kpi-sub">August 2025 · BPS Sakernas</div><div class="kpi-note">7.46 million people out of work.</div></div>
+      <div class="kpi"><div class="kpi-label" data-en="Poverty rate" data-id="Tingkat kemiskinan">Poverty rate</div><div class="kpi-value num">8.47%</div><div class="kpi-sub">March 2025 · BPS</div><div class="kpi-note">23.85 million people below the line.</div></div>
+    </div>
+  </section>
+
+  <section class="insights" aria-label="Headline insights">
+    <div class="insight"><h3>66 straight months of trade surplus</h3><p>Exports reached US$234.04bn in Jan–Oct 2025 (+6.96% yoy) against US$198.16bn of imports — a US$35.88bn surplus, the longest streak since May 2020. China, the US and India took 41.8% of non-oil exports.</p></div>
+    <div class="insight"><h3>Human development keeps climbing</h3><p>The Human Development Index (IPM) reached 75.02 in 2024, up 0.63 points on 2023 — the fifth straight annual rise. Life expectancy hit 74.15 years, but the gap is wide: DKI Jakarta scores 83.08 while Highland Papua scores 53.42.</p></div>
+  </section>
+
+  <h2 data-en="Growth, prices and jobs" data-id="Pertumbuhan, harga, dan pekerjaan">Growth, prices and jobs</h2>
+  <div class="grid2">
+    <div class="card">
+      <h3 data-en="Real GDP growth — full years, plus the latest quarter" data-id="Pertumbuhan PDB riil — tahunan, plus kuartal terbaru">Real GDP growth — full years, plus the latest quarter</h3>
+      <div class="chart" id="chartGdp"></div>
+      <p class="legend"><span class="sw" style="background:#0d766e"></span><span data-en="Full-year growth" data-id="Pertumbuhan setahun penuh">Full-year growth</span> &nbsp; <span class="sw" style="background:#e7ac57"></span><span data-en="Latest quarter (yoy)" data-id="Kuartal terbaru (yoy)">Latest quarter (yoy)</span> &nbsp; <span class="sw" style="background:#d85d49"></span><span data-en="Contraction" data-id="Kontraksi">Contraction</span></p>
+      <p class="muted">BPS: full-year 2020–2024; Q3 2025 released 5 Nov 2025. The 2025 full year was not published yet on 26 Nov 2026, so no full-year 2025 bar is shown. <a href="economy.html">Economy in detail →</a></p>
+    </div>
+    <div class="card">
+      <h3 data-en="Inflation and unemployment — the two lines that matter to households" data-id="Inflasi dan pengangguran — dua garis yang menentukan hidup rumah tangga">Inflation and unemployment — the two lines that matter to households</h3>
+      <div class="chart" id="chartInflUnemp"></div>
+      <p class="legend"><span class="sw" style="background:#d85d49"></span><span data-en="Inflation (Dec yoy; Oct 2025 latest)" data-id="Inflasi (Des yoy; Okt 2025 terbaru)">Inflation (Dec yoy; Oct 2025 latest)</span> &nbsp; <span class="sw" style="background:#0d766e"></span><span data-en="Unemployment (Aug)" data-id="Pengangguran (Agu)">Unemployment (Aug)</span></p>
+      <p class="muted">BPS CPI and Sakernas. Inflation peaked at 5.51% in Dec 2022 and has stayed inside target since; unemployment has fallen every year since the 2020 peak of 7.07%. <a href="economy.html">Economy in detail →</a></p>
+    </div>
+  </div>
+
+  <h2 data-en="Where Indonesians live" data-id="Di mana orang Indonesia tinggal">Where Indonesians live</h2>
+  <div class="card">
+    <h3 data-en="The ten largest provinces hold 72% of the country" data-id="Sepuluh provinsi terbesar menampung 72% penduduk">The ten largest provinces hold 72% of the country</h3>
+    <div class="chart" id="chartTopProv"></div>
+    <p class="muted">BPS mid-2025 estimates. West Java alone (50.76m) is larger than Spain. Explore all 38 provinces — search, filter, compare, download the data — in the <a href="provinces.html">Province Explorer →</a></p>
+  </div>
+
+  <h2 data-en="Start exploring" data-id="Mulai menjelajah">Start exploring</h2>
+  <div class="grid2">
+    <div class="card"><h3><a href="people.html">People →</a></h3><p>Human development, poverty, jobs and who lives where — including the 16.9% youth unemployment rate and the urban–rural divide.</p></div>
+    <div class="card"><h3><a href="connectivity.html">Connectivity →</a></h3><p>77.63% of Indonesians used the internet in 2025 — but the city–village gap is still 12.58 points. Plus electricity, forests and emissions.</p></div>
+  </div>
+
+  <footer class="site">
+    <p><b>NUSAMETRIK</b> — an independent statistics site. All figures from BPS (Statistics Indonesia), Bank Indonesia, UNDP and the World Bank, each labelled with its period in <a href="sources.html">Sources &amp; methodology</a>. Works fully offline: no network requests, no tracking, no cookies.</p>
+  </footer>
+</div>
+<script src="data.js"></script>
+<script src="main.js"></script>
+</body>
+</html>

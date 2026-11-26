@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>People — NUSAMETRIK</title>
+<meta name="description" content="Indonesia's people: population, human development, poverty, jobs and literacy — verified BPS figures as published by 26 November 2026.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-page="people">
+<header class="top">
+  <div class="bar">
+    <a class="brand" href="index.html">NUSA<b>METRIK</b></a>
+    <span class="edition">2025 ANNUAL EDITION</span>
+    <nav class="main" id="mainNav" aria-label="Sections">
+      <a href="index.html">Overview</a>
+      <a href="economy.html">Economy</a>
+      <a href="people.html" aria-current="page">People</a>
+      <a href="provinces.html">Provinces</a>
+      <a href="connectivity.html">Connectivity</a>
+      <a href="sources.html">Sources</a>
+    </nav>
+    <div class="controls">
+      <button type="button" id="themeBtn" aria-label="Toggle dark or light theme">☾ Dark</button>
+      <button type="button" id="langBtn" aria-label="Switch language">ID</button>
+      <button type="button" class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="mainNav">☰ Menu</button>
+    </div>
+  </div>
+</header>
+<div class="wrap">
+  <h1 data-en="The people" data-id="Penduduk">The people</h1>
+  <p class="lede" data-en="284.44 million people, living on average 74.15 years, with a human development index of 75.02 — and a poverty rate down to 8.47%. The averages hide the gaps: this page shows both." data-id="284,44 juta jiwa, hidup rata-rata 74,15 tahun, dengan indeks pembangunan manusia 75,02 — dan kemiskinan turun ke 8,47%. Rata-rata menyembunyikan kesenjangan: halaman ini menunjukkan keduanya.">284.44 million people, living on average 74.15 years, with a human development index of 75.02 — and a poverty rate down to 8.47%. The averages hide the gaps: this page shows both.</p>
+
+  <div class="stat-list">
+    <div class="stat"><b class="num">284.44m</b><span data-en="Population, mid-2025" data-id="Penduduk, pertengahan 2025">Population, mid-2025</span><br><small class="muted">BPS estimate · density ≈150/km² · land area 1,890,180 km²</small></div>
+    <div class="stat"><b class="num">75.02</b><span data-en="Human Development Index, 2024" data-id="Indeks Pembangunan Manusia, 2024">Human Development Index, 2024</span><br><small class="muted">+0.63 points on 2023 (74.39) · BPS</small></div>
+    <div class="stat"><b class="num">74.15y</b><span data-en="Life expectancy, 2024" data-id="Harapan hidup, 2024">Life expectancy, 2024</span><br><small class="muted">Expected schooling 13.21 years · mean schooling 8.85 years</small></div>
+    <div class="stat"><b class="num">98.15%</b><span data-en="Literacy, aged 15+, 2023" data-id="Melek huruf, usia 15+, 2023">Literacy, aged 15+, 2023</span><br><small class="muted">BPS · UNDP HDI 0.728, rank 114 of 193 (2023 data)</small></div>
+  </div>
+
+  <h2 data-en="Human development, year by year" data-id="Pembangunan manusia dari tahun ke tahun">Human development, year by year</h2>
+  <div class="grid2">
+    <div class="card">
+      <h3 data-en="Human Development Index (IPM), 2020–2024" data-id="Indeks Pembangunan Manusia (IPM), 2020–2024">Human Development Index (IPM), 2020–2024</h3>
+      <div class="chart" id="chartIpm"></div>
+      <p class="muted">BPS BRS 15 Nov 2024. The chart shows only the verified 2020–2024 series — the 2025 figure was not published yet on 26 Nov 2026. Highest: DKI Jakarta 83.08, DI Yogyakarta 81.55, East Kalimantan 78.83. Lowest: Highland Papua 53.42, Central Papua 59.75.</p>
+    </div>
+    <div class="card">
+      <h3 data-en="Poverty is falling — slowly" data-id="Kemiskinan menurun — perlahan">Poverty is falling — slowly</h3>
+      <div class="chart" id="chartPoverty"></div>
+      <p class="muted">BPS. March 2025: <b>8.47%</b> (23.85m people) — urban 6.73%, rural 11.03%. Poverty line Rp609,160 per capita/month; extreme poverty 0.85%. The September 2025 figure was not published yet on 26 Nov 2026.</p>
+    </div>
+  </div>
+
+  <h2 data-en="Where people live" data-id="Di mana penduduk tinggal">Where people live</h2>
+  <div class="card">
+    <h3 data-en="Population by island group, mid-2025" data-id="Penduduk menurut kelompok pulau, pertengahan 2025">Population by island group, mid-2025</h3>
+    <div class="chart" id="chartIslands"></div>
+    <p class="muted">Sums of the BPS mid-2025 provincial estimates (see <a href="provinces.html">Province Explorer</a>). Java: 158.08m (55.6%) on 6.6% of the land. Papua's six provinces together: 5.82m (2.0%) on 24.4% of the land.</p>
+  </div>
+
+  <h2 data-en="Work and wages" data-id="Pekerjaan dan upah">Work and wages</h2>
+  <div class="card">
+    <table class="data">
+      <tbody>
+        <tr><td>Open unemployment, Aug 2025</td><td class="num"><b>4.85%</b> (7.46m people)</td></tr>
+        <tr><td>Youth unemployment, ages 15–24, Aug 2025</td><td class="num"><b>16.9%</b></td></tr>
+        <tr><td>Part-time workers / underemployed, Aug 2025</td><td class="num">24.77% / 7.91% (11.60m)</td></tr>
+        <tr><td>Average monthly wage, Aug 2025</td><td class="num"><b>Rp3.33m</b></td></tr>
+        <tr><td>Formal workers, share of employment, Aug 2025</td><td class="num">42.20%</td></tr>
+      </tbody>
+    </table>
+    <p class="muted">Source: BPS Sakernas, August 2025 (BRS 5 Nov 2025). The headline rate is the lowest since the pandemic, but job quality lags: most new jobs are informal, and young people face a rate more than three times the national average.</p>
+    <p class="muted">Next: <a href="provinces.html">Provinces →</a> to compare regions, or <a href="sources.html">Sources →</a> for every release date.</p>
+  </div>
+
+  <footer class="site">
+    <p><b>NUSAMETRIK</b> — figures from BPS (Statistics Indonesia) and UNDP, each labelled with its period in <a href="sources.html">Sources &amp; methodology</a>. Works fully offline.</p>
+  </footer>
+</div>
+<script src="data.js"></script>
+<script src="main.js"></script>
+</body>
+</html>

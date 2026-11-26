@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Provinces — NUSAMETRIK</title>
+<meta name="description" content="All 38 Indonesian provinces: search, filter, sort, compare and download. Population mid-2025, BPS.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-page="provinces">
+<header class="top">
+  <div class="bar">
+    <a class="brand" href="index.html">NUSA<b>METRIK</b></a>
+    <span class="edition">2025 ANNUAL EDITION</span>
+    <nav class="main" id="mainNav" aria-label="Sections">
+      <a href="index.html">Overview</a>
+      <a href="economy.html">Economy</a>
+      <a href="people.html">People</a>
+      <a href="provinces.html" aria-current="page">Provinces</a>
+      <a href="connectivity.html">Connectivity</a>
+      <a href="sources.html">Sources</a>
+    </nav>
+    <div class="controls">
+      <button type="button" id="themeBtn" aria-label="Toggle dark or light theme">☾ Dark</button>
+      <button type="button" id="langBtn" aria-label="Switch language">ID</button>
+      <button type="button" class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="mainNav">☰ Menu</button>
+    </div>
+  </div>
+</header>
+<div class="wrap">
+  <h1 data-en="Province Explorer" data-id="Penjelajah Provinsi">Province Explorer</h1>
+  <p class="lede" data-en="All 38 provinces, one table. Population is the BPS mid-2025 estimate; area is land area; density is people per km². Tap a tile for the detail, or compare any two provinces side by side." data-id="Ke-38 provinsi dalam satu tabel. Penduduk adalah estimasi BPS pertengahan 2025; luas adalah luas daratan; kepadatan adalah jiwa per km². Ketuk ubin untuk detail, atau bandingkan dua provinsi berdampingan.">All 38 provinces, one table. Population is the BPS mid-2025 estimate; area is land area; density is people per km². Tap a tile for the detail, or compare any two provinces side by side.</p>
+
+  <div class="card">
+    <div class="explorer-bar">
+      <input type="search" id="provSearch" placeholder="Search province or capital…" aria-label="Search provinces">
+      <select id="macroFilter" aria-label="Filter by region">
+        <option value="All">All regions</option>
+        <option value="Sumatra">Sumatra</option>
+        <option value="Java">Java</option>
+        <option value="Kalimantan">Kalimantan</option>
+        <option value="East">Eastern Indonesia</option>
+      </select>
+      <select id="sortPick" aria-label="Sort provinces">
+        <option value="pop-desc">Largest population first</option>
+        <option value="pop-asc">Smallest population first</option>
+        <option value="density-desc">Densest first</option>
+        <option value="area-desc">Largest area first</option>
+        <option value="name">Name A–Z</option>
+      </select>
+      <button type="button" class="btn" id="csvBtn">⬇ Download CSV</button>
+    </div>
+    <p class="muted"><span id="provCount">38 of 38 provinces</span> · <span data-en="CSV contains the provinces currently shown." data-id="CSV berisi provinsi yang sedang ditampilkan.">CSV contains the provinces currently shown.</span></p>
+    <div id="tiles" class="tiles" role="group" aria-label="Province tiles"></div>
+    <div id="provDetail" class="card" aria-live="polite"></div>
+  </div>
+
+  <h2 data-en="Compare two provinces" data-id="Bandingkan dua provinsi">Compare two provinces</h2>
+  <div class="card">
+    <div class="compare">
+      <div><label for="cmpA" data-en="First province" data-id="Provinsi pertama">First province</label><select id="cmpA"></select></div>
+      <div><label for="cmpB" data-en="Second province" data-id="Provinsi kedua">Second province</label><select id="cmpB"></select></div>
+    </div>
+    <div id="cmpOut" style="margin-top:12px"></div>
+    <p class="muted">West Java (50.76m) vs East Java (42.09m): the two giants are close in size, but West Java packs its people into 37,053 km² against East Java's 48,056 km² — density 1,370 vs 876 per km².</p>
+  </div>
+
+  <h2 data-en="All 38 provinces" data-id="Ke-38 provinsi">All 38 provinces</h2>
+  <div class="card">
+    <div style="overflow-x:auto">
+    <table class="data" id="provTable">
+      <thead><tr><th>#</th><th>Province</th><th>Capital</th><th>Island group</th><th class="num">Population</th><th class="num">Area (km²)</th><th class="num">Density</th></tr></thead>
+      <tbody></tbody>
+    </table>
+    </div>
+    <p class="muted">Source: BPS mid-2025 population estimates (via the official provincial table); land areas as published. The 38 populations sum to 284.44m, matching the national estimate. Jakarta's density — 16,155/km² — is the highest in the country; South Papua's 5/km² is the lowest.</p>
+  </div>
+
+  <footer class="site">
+    <p><b>NUSAMETRIK</b> — figures from BPS (Statistics Indonesia), each labelled with its period in <a href="sources.html">Sources &amp; methodology</a>. Works fully offline.</p>
+  </footer>
+</div>
+<script src="data.js"></script>
+<script src="main.js"></script>
+</body>
+</html>
