@@ -1,108 +1,92 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Economy — NUSAMETRIK</title>
-<meta name="description" content="Indonesia's economy: GDP growth, inflation, jobs and trade — verified BPS figures as published by 26 November 2026.">
+<title>Economy — SELAT ATLAS</title>
+<meta name="description" content="Malaysia's economy in 2025: GDP, inflation, unemployment and sector growth. SELAT ATLAS, data from DOSM.">
 <link rel="stylesheet" href="style.css">
 </head>
 <body data-page="economy">
-<header class="top">
-  <div class="bar">
-    <a class="brand" href="index.html">NUSA<b>METRIK</b></a>
-    <span class="edition">2025 ANNUAL EDITION</span>
-    <nav class="main" id="mainNav" aria-label="Sections">
+<a class="skip" href="#main">Skip to content</a>
+<header class="masthead">
+  <div class="wrap masthead-in">
+    <a class="brand" href="index.html"><img src="logo.svg" alt="" width="30" height="30"><span>SELAT ATLAS<small>MALAYSIA NATIONAL STATISTICS ATLAS</small></span></a>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="mainnav">Menu</button>
+    <nav class="mainnav" id="mainnav" aria-label="Main navigation">
       <a href="index.html">Overview</a>
       <a href="economy.html" aria-current="page">Economy</a>
-      <a href="people.html">People</a>
-      <a href="provinces.html">Provinces</a>
-      <a href="connectivity.html">Connectivity</a>
-      <a href="sources.html">Sources</a>
+      <a href="people.html">People &amp; Living</a>
+      <a href="states.html">State Explorer</a>
     </nav>
-    <div class="controls">
-      <button type="button" id="themeBtn" aria-label="Toggle dark or light theme">☾ Dark</button>
-      <button type="button" id="langBtn" aria-label="Switch language">ID</button>
-      <button type="button" class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="mainNav">☰ Menu</button>
-    </div>
   </div>
 </header>
-<div class="wrap">
-  <h1 data-en="The economy" data-id="Perekonomian">The economy</h1>
-  <p class="lede" data-en="Growth has held above 5% for three straight years, inflation is back inside target, and the trade surplus has run for 66 months. Every figure below is the latest published by BPS on 26 November 2026." data-id="Pertumbuhan bertahan di atas 5% selama tiga tahun beruntun, inflasi kembali dalam sasaran, dan surplus dagang berjalan 66 bulan. Setiap angka di bawah ini adalah rilis terbaru BPS per 26 November 2026.">Growth has held above 5% for three straight years, inflation is back inside target, and the trade surplus has run for 66 months. Every figure below is the latest published by BPS on 26 November 2026.</p>
-
-  <div class="stat-list">
-    <div class="stat"><b class="num">5.04%</b><span data-en="GDP growth, Q3 2025 (yoy)" data-id="Pertumbuhan PDB, Kuartal III 2025 (yoy)">GDP growth, Q3 2025 (yoy)</span><br><small class="muted">Jan–Sep 2025 cumulative: 5.01% · Q2 2025: 5.12%</small></div>
-    <div class="stat"><b class="num">Rp22,139T</b><span data-en="Nominal GDP, 2024" data-id="PDB nominal, 2024">Nominal GDP, 2024</span><br><small class="muted">US$1.40T · Rp78.62m per capita (US$4,960.33)</small></div>
-    <div class="stat"><b class="num">2.86%</b><span data-en="Inflation, Oct 2025 (yoy)" data-id="Inflasi, Okt 2025 (yoy)">Inflation, Oct 2025 (yoy)</span><br><small class="muted">Core 2.36% · volatile food 6.59% · administered prices 1.45%</small></div>
-    <div class="stat"><b class="num">US$35.88bn</b><span data-en="Trade surplus, Jan–Oct 2025" data-id="Surplus dagang, Jan–Okt 2025">Trade surplus, Jan–Oct 2025</span><br><small class="muted">66 consecutive months in surplus since May 2020</small></div>
-  </div>
-
-  <h2 data-en="Pick an indicator" data-id="Pilih indikator">Pick an indicator</h2>
-  <div class="card">
-    <div class="picker-row">
-      <label for="indicatorPick" data-en="Indicator:" data-id="Indikator:">Indicator:</label>
-      <select id="indicatorPick">
-        <option value="gdp">GDP growth (real, %)</option>
-        <option value="inflation">Inflation 2025, monthly (yoy, %)</option>
-        <option value="unemployment">Unemployment, August (%)</option>
-      </select>
-      <label for="yearNote" data-en="Period shown:" data-id="Periode:">Period shown:</label>
-      <span id="yearNote" class="muted">2020–2025 · BPS</span>
+<main id="main">
+  <div class="wrap">
+    <div class="page-head">
+      <span class="edition">2025 Annual Edition</span>
+      <h1>Economy</h1>
+      <p class="lede">Real GDP grew 5.2% in 2025 — the same as 2024 — with nominal GDP at RM2.03 trillion; inflation cooled to 1.4% and unemployment to 3.0%.</p>
     </div>
-    <div class="chart" id="chartPicker"></div>
-    <p class="muted">GDP: full-year growth 2020–2024 plus Q3 2025 (5.04% yoy, amber) — the 2025 full year was not published yet on 26 Nov 2026. Inflation: monthly 2025, Jan 0.76% to Oct 2.86%; February 2025 briefly printed −0.09% (deflation) after administered-price cuts. Unemployment: August Sakernas, 7.07% (2020) down to 4.85% (2025).</p>
-  </div>
-
-  <h2 data-en="Size of the economy" data-id="Besarnya perekonomian">Size of the economy</h2>
-  <div class="card">
-    <h3 data-en="Nominal GDP — the latest complete years" data-id="PDB nominal — tahun lengkap terbaru">Nominal GDP — the latest complete years</h3>
-    <table class="data">
-      <thead><tr><th>Year</th><th class="num">Nominal GDP (Rp trillion)</th><th class="num">Nominal GDP (US$ bn)</th><th class="num">Real growth (%)</th></tr></thead>
-      <tbody>
-        <tr><td>2023</td><td class="num">20,892.4</td><td class="num">1,371.2</td><td class="num">5.05</td></tr>
-        <tr><td>2024</td><td class="num">22,138.96</td><td class="num">1,396.3</td><td class="num">5.03</td></tr>
-        <tr><td>Q3 2025 (quarter only)</td><td class="num">6,060.0</td><td class="num">362.5</td><td class="num">5.04 yoy</td></tr>
-      </tbody>
-    </table>
-    <p class="muted">Source: BPS, BRS 5 Feb 2025 (2024 full year) and BRS 5 Nov 2025 (Q3 2025). GDP per capita 2024: Rp78.62m (US$4,960.33), up from Rp75.0m in 2023.</p>
-  </div>
-
-  <h2 data-en="Trade — who buys from Indonesia" data-id="Perdagangan — siapa membeli dari Indonesia">Trade — who buys from Indonesia</h2>
-  <div class="grid2">
-    <div class="card">
-      <h3 data-en="Top export destinations, Jan–Oct 2025 (US$ bn)" data-id="Tujuan ekspor terbesar, Jan–Okt 2025 (US$ miliar)">Top export destinations, Jan–Oct 2025 (US$ bn)</h3>
-      <div class="chart" id="chartTrade"></div>
-      <p class="muted">Together: US$93.33bn, 41.84% of non-oil exports. Source: BPS BRS 1 Dec 2025.</p>
+    <section class="kpis" aria-label="Key economic indicators">
+      <div class="kpi accent"><div class="k-label">Nominal GDP</div><div class="k-value num">RM2.03T</div><div class="k-detail">2025 · DOSM</div></div>
+      <div class="kpi"><div class="k-label">Real GDP</div><div class="k-value num">RM1.74T</div><div class="k-detail">2025, 2015 prices · DOSM</div></div>
+      <div class="kpi"><div class="k-label">Real GDP growth</div><div class="k-value num">+5.2%</div><div class="k-detail">2025, YoY · DOSM</div></div>
+      <div class="kpi"><div class="k-label">Inflation (CPI)</div><div class="k-value num">1.4%</div><div class="k-detail">2025 · was 1.8% in 2024</div></div>
+      <div class="kpi"><div class="k-label">Unemployment</div><div class="k-value num">3.0%</div><div class="k-detail">2025 · was 3.2% in 2024</div></div>
+      <div class="kpi"><div class="k-label">Services + manufacturing</div><div class="k-value num">82.5%</div><div class="k-detail">of GDP, 2025 · DOSM</div></div>
+    </section>
+    <section class="card" aria-labelledby="sectors-title">
+      <h2 class="chart-title" id="sectors-title">Sector growth, 2025</h2>
+      <p class="chart-sub">Real growth by sector, % year on year. The dashed line is national GDP growth (5.2%). Source: DOSM, Gross Domestic Product 2025 (15 May 2026).</p>
+      <div id="chart-sectors"></div>
+      <p class="footnote">Only Construction (12.2%) and Services (5.4%) grew faster than GDP itself. Sector growth is not sector share of GDP.</p>
+    </section>
+    <div class="two-col">
+      <section class="card" aria-labelledby="inflation-title">
+        <h2 class="chart-title" id="inflation-title">Inflation cooled</h2>
+        <p class="chart-sub">Annual average CPI, %. Source: DOSM, Analysis of Annual CPI 2025 (29 Apr 2026).</p>
+        <div id="chart-inflation"></div>
+        <p class="footnote">Inflation fell 0.4 percentage points, from 1.8% in 2024 to 1.4% in 2025.</p>
+      </section>
+      <section class="card" aria-labelledby="unemp-title">
+        <h2 class="chart-title" id="unemp-title">Unemployment edged down</h2>
+        <p class="chart-sub">Annual average unemployment rate, %. Source: DOSM, Labour Force Survey 2025 (26 Jun 2026).</p>
+        <div id="chart-unemployment"></div>
+        <p class="footnote">Unemployment fell 0.2 percentage points, from 3.2% in 2024 to 3.0% in 2025.</p>
+      </section>
     </div>
-    <div class="card">
-      <h3 data-en="Trade balance, Jan–Oct 2025" data-id="Neraca dagang, Jan–Okt 2025">Trade balance, Jan–Oct 2025</h3>
+    <section class="card" aria-labelledby="mix-title">
+      <h2 class="chart-title" id="mix-title">What the economy is made of</h2>
+      <p class="chart-sub">Share of nominal GDP, 2025. Source: DOSM, Gross Domestic Product 2025 (15 May 2026).</p>
+      <div id="chart-mix"></div>
+      <p class="footnote">Services and manufacturing account for 82.5% of GDP; all other sectors make up the remaining 17.5%.</p>
+    </section>
+    <section class="card" aria-labelledby="gdp-table-title">
+      <h2 id="gdp-table-title">GDP at a glance</h2>
       <table class="data">
+        <thead><tr><th>Measure</th><th class="num">2025</th><th>Publication</th></tr></thead>
         <tbody>
-          <tr><td>Exports (total)</td><td class="num">US$234.04bn (+6.96% yoy)</td></tr>
-          <tr><td>Exports, non-oil &amp; gas</td><td class="num">US$223.12bn (+8.42%)</td></tr>
-          <tr><td>Imports (total)</td><td class="num">US$198.16bn (+2.19% yoy)</td></tr>
-          <tr><td>Imports, non-oil &amp; gas</td><td class="num">US$171.61bn (+4.95%)</td></tr>
-          <tr><td><b>Trade surplus</b></td><td class="num"><b>US$35.88bn</b></td></tr>
-          <tr><td>Non-oil surplus / oil deficit</td><td class="num">+US$51.51bn / −US$15.63bn</td></tr>
-          <tr><td>October 2025 alone</td><td class="num">Exports US$24.24bn · imports US$21.84bn</td></tr>
+          <tr><td>Real GDP growth</td><td class="num">5.2%</td><td>Gross Domestic Product 2025 — 15 May 2026</td></tr>
+          <tr><td>Nominal GDP</td><td class="num">RM2.03 trillion</td><td>Gross Domestic Product 2025 — 15 May 2026</td></tr>
+          <tr><td>Real GDP (2015 prices)</td><td class="num">RM1.74 trillion</td><td>Gross Domestic Product 2025 — 15 May 2026</td></tr>
+          <tr><td>Services + manufacturing share</td><td class="num">82.5%</td><td>Gross Domestic Product 2025 — 15 May 2026</td></tr>
         </tbody>
       </table>
-      <p class="muted">Source: BPS, BRS Exports and Imports of Indonesia, October 2025 (1 Dec 2025).</p>
-    </div>
+      <p class="src">Release page: <a href="https://www.dosm.gov.my/portal-main/release-content/gross-domestic-product-2025">dosm.gov.my — Gross Domestic Product 2025</a>. Uses the 15 May 2026 vintage; the older RM2.02 trillion release is not used.</p>
+    </section>
   </div>
-
-  <h2 data-en="Jobs" data-id="Ketenagakerjaan">Jobs</h2>
-  <div class="card">
-    <p>Open unemployment was <b>4.85%</b> in August 2025 (7.46 million people), down from 4.91% a year earlier — but up from 4.76% in February 2025. The pain sits with the young: unemployment among 15–24-year-olds was <b>16.9%</b>. Nearly a quarter of workers (24.77%) work part-time and 7.91% are underemployed. Average employee wage: <b>Rp3.33m a month</b> (Aug 2025, Sakernas).</p>
-    <p class="muted">Next: <a href="people.html">People →</a> for poverty and human development, or <a href="sources.html">Sources →</a> for every release date.</p>
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <p>SELAT ATLAS — Malaysia National Statistics Atlas, 2025 Annual Edition. Data: DOSM and OpenDOSM (CC BY 4.0). Static site; no external requests, no tracking.</p>
   </div>
-
-  <footer class="site">
-    <p><b>NUSAMETRIK</b> — figures from BPS (Statistics Indonesia) and Bank Indonesia, each labelled with its period in <a href="sources.html">Sources &amp; methodology</a>. Works fully offline.</p>
-  </footer>
-</div>
-<script src="data.js"></script>
-<script src="main.js"></script>
+</footer>
+<script src="data-national.js"></script>
+<script src="data-states.js"></script>
+<script src="sources.js"></script>
+<script src="charts.js"></script>
+<script src="state-explorer.js"></script>
+<script src="core.js"></script>
 </body>
 </html>

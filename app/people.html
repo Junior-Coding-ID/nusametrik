@@ -1,84 +1,94 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>People — NUSAMETRIK</title>
-<meta name="description" content="Indonesia's people: population, human development, poverty, jobs and literacy — verified BPS figures as published by 26 November 2026.">
+<title>People &amp; Living — SELAT ATLAS</title>
+<meta name="description" content="Living standards in Malaysia: poverty, household income, inequality, internet access and electricity. SELAT ATLAS, data from DOSM.">
 <link rel="stylesheet" href="style.css">
 </head>
 <body data-page="people">
-<header class="top">
-  <div class="bar">
-    <a class="brand" href="index.html">NUSA<b>METRIK</b></a>
-    <span class="edition">2025 ANNUAL EDITION</span>
-    <nav class="main" id="mainNav" aria-label="Sections">
+<a class="skip" href="#main">Skip to content</a>
+<header class="masthead">
+  <div class="wrap masthead-in">
+    <a class="brand" href="index.html"><img src="logo.svg" alt="" width="30" height="30"><span>SELAT ATLAS<small>MALAYSIA NATIONAL STATISTICS ATLAS</small></span></a>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="mainnav">Menu</button>
+    <nav class="mainnav" id="mainnav" aria-label="Main navigation">
       <a href="index.html">Overview</a>
       <a href="economy.html">Economy</a>
-      <a href="people.html" aria-current="page">People</a>
-      <a href="provinces.html">Provinces</a>
-      <a href="connectivity.html">Connectivity</a>
-      <a href="sources.html">Sources</a>
+      <a href="people.html" aria-current="page">People &amp; Living</a>
+      <a href="states.html">State Explorer</a>
     </nav>
-    <div class="controls">
-      <button type="button" id="themeBtn" aria-label="Toggle dark or light theme">☾ Dark</button>
-      <button type="button" id="langBtn" aria-label="Switch language">ID</button>
-      <button type="button" class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="mainNav">☰ Menu</button>
-    </div>
   </div>
 </header>
-<div class="wrap">
-  <h1 data-en="The people" data-id="Penduduk">The people</h1>
-  <p class="lede" data-en="284.44 million people, living on average 74.15 years, with a human development index of 75.02 — and a poverty rate down to 8.47%. The averages hide the gaps: this page shows both." data-id="284,44 juta jiwa, hidup rata-rata 74,15 tahun, dengan indeks pembangunan manusia 75,02 — dan kemiskinan turun ke 8,47%. Rata-rata menyembunyikan kesenjangan: halaman ini menunjukkan keduanya.">284.44 million people, living on average 74.15 years, with a human development index of 75.02 — and a poverty rate down to 8.47%. The averages hide the gaps: this page shows both.</p>
-
-  <div class="stat-list">
-    <div class="stat"><b class="num">284.44m</b><span data-en="Population, mid-2025" data-id="Penduduk, pertengahan 2025">Population, mid-2025</span><br><small class="muted">BPS estimate · density ≈150/km² · land area 1,890,180 km²</small></div>
-    <div class="stat"><b class="num">75.02</b><span data-en="Human Development Index, 2024" data-id="Indeks Pembangunan Manusia, 2024">Human Development Index, 2024</span><br><small class="muted">+0.63 points on 2023 (74.39) · BPS</small></div>
-    <div class="stat"><b class="num">74.15y</b><span data-en="Life expectancy, 2024" data-id="Harapan hidup, 2024">Life expectancy, 2024</span><br><small class="muted">Expected schooling 13.21 years · mean schooling 8.85 years</small></div>
-    <div class="stat"><b class="num">98.15%</b><span data-en="Literacy, aged 15+, 2023" data-id="Melek huruf, usia 15+, 2023">Literacy, aged 15+, 2023</span><br><small class="muted">BPS · UNDP HDI 0.728, rank 114 of 193 (2023 data)</small></div>
-  </div>
-
-  <h2 data-en="Human development, year by year" data-id="Pembangunan manusia dari tahun ke tahun">Human development, year by year</h2>
-  <div class="grid2">
-    <div class="card">
-      <h3 data-en="Human Development Index (IPM), 2020–2024" data-id="Indeks Pembangunan Manusia (IPM), 2020–2024">Human Development Index (IPM), 2020–2024</h3>
-      <div class="chart" id="chartIpm"></div>
-      <p class="muted">BPS BRS 15 Nov 2024. The chart shows only the verified 2020–2024 series — the 2025 figure was not published yet on 26 Nov 2026. Highest: DKI Jakarta 83.08, DI Yogyakarta 81.55, East Kalimantan 78.83. Lowest: Highland Papua 53.42, Central Papua 59.75.</p>
+<main id="main">
+  <div class="wrap">
+    <div class="page-head">
+      <span class="edition">2025 Annual Edition</span>
+      <h1>People &amp; Living</h1>
+      <p class="lede">Poverty fell to 5.1% in 2024, median household income reached RM7,017 a month, and 97.1% of households were online in 2025.</p>
     </div>
-    <div class="card">
-      <h3 data-en="Poverty is falling — slowly" data-id="Kemiskinan menurun — perlahan">Poverty is falling — slowly</h3>
-      <div class="chart" id="chartPoverty"></div>
-      <p class="muted">BPS. March 2025: <b>8.47%</b> (23.85m people) — urban 6.73%, rural 11.03%. Poverty line Rp609,160 per capita/month; extreme poverty 0.85%. The September 2025 figure was not published yet on 26 Nov 2026.</p>
+    <section class="kpis" aria-label="Key living-standard indicators">
+      <div class="kpi accent"><div class="k-label">Poverty rate</div><div class="k-value num">5.1%</div><div class="k-detail">2024, households · DOSM</div></div>
+      <div class="kpi"><div class="k-label">Median household income</div><div class="k-value num">RM7,017</div><div class="k-detail">per month, 2024 · DOSM</div></div>
+      <div class="kpi"><div class="k-label">Household internet</div><div class="k-value num">97.1%</div><div class="k-detail">2025 · DOSM</div></div>
+      <div class="kpi"><div class="k-label">Individual internet use</div><div class="k-value num">98.3%</div><div class="k-detail">2025, aged 15+ · DOSM</div></div>
+      <div class="kpi"><div class="k-label">Gini coefficient</div><div class="k-value num">0.390</div><div class="k-detail">2024 · DOSM</div></div>
+      <div class="kpi"><div class="k-label">Electricity access</div><div class="k-value num">99.9%</div><div class="k-detail">2024 · DOSM</div></div>
+    </section>
+    <div class="two-col">
+      <section class="card" aria-labelledby="poverty-title">
+        <h2 class="chart-title" id="poverty-title">Poverty fell</h2>
+        <p class="chart-sub">Absolute household poverty, %. Source: DOSM, Poverty in Malaysia 2024 (8 Oct 2025).</p>
+        <div id="chart-poverty-slope"></div>
+        <p class="footnote">Poverty fell 1.1 percentage points, from 6.2% in 2022 to 5.1% in 2024, for households in the official Malaysian-citizen statistical coverage.</p>
+      </section>
+      <section class="card" aria-labelledby="gini-title">
+        <h2 class="chart-title" id="gini-title">Inequality narrowed</h2>
+        <p class="chart-sub">Gini coefficient, 0–1 scale. Source: DOSM, Income Inequality 2024 (8 Oct 2025).</p>
+        <div id="chart-gini-slope"></div>
+        <p class="footnote">The Gini coefficient fell 0.014, from 0.404 in 2022 to 0.390 in 2024. Gini is a 0–1 index, not a percent.</p>
+      </section>
     </div>
+    <section class="card" aria-labelledby="internet-title">
+      <h2 class="chart-title" id="internet-title">The urban–rural internet gap</h2>
+      <p class="chart-sub">Households with internet access, 2025. Source: DOSM, ICT Use and Access by Individuals and Households Survey Report 2025 (23 Apr 2026).</p>
+      <div id="chart-internet-dumbbell"></div>
+      <p class="footnote">Urban households 99.0%, rural 90.7% — a gap of 8.3 percentage points; national household figure 97.1%. Individual internet use (98.3%) counts people aged 15+ who used the internet in the last 3 months — a different measure, never merged.</p>
+    </section>
+    <section class="card" aria-labelledby="electricity-title">
+      <h2 class="chart-title" id="electricity-title">Electricity access, 2024</h2>
+      <p class="chart-sub">Dwellings with electricity access, %. Source: DOSM, Basic Amenities Survey Report 2024 (24 Dec 2025).</p>
+      <div id="chart-electricity"></div>
+      <p class="footnote">Near-universal: 99.9% nationally, 100.0% urban, 99.4% rural.</p>
+    </section>
+    <section class="card" aria-labelledby="living-table-title">
+      <h2 id="living-table-title">Living standards at a glance</h2>
+      <table class="data">
+        <thead><tr><th>Measure</th><th class="num">Value</th><th class="num">Year</th><th>Publication</th></tr></thead>
+        <tbody>
+          <tr><td>Absolute household poverty</td><td class="num">5.1%</td><td class="num">2024</td><td>Poverty in Malaysia 2024 — 8 Oct 2025</td></tr>
+          <tr><td>Median gross household income</td><td class="num">RM7,017 / month</td><td class="num">2024</td><td>Household Income Survey Report — 8 Oct 2025</td></tr>
+          <tr><td>Gini coefficient</td><td class="num">0.390</td><td class="num">2024</td><td>Income Inequality 2024 — 8 Oct 2025</td></tr>
+          <tr><td>Household internet access</td><td class="num">97.1%</td><td class="num">2025</td><td>ICT Survey Report 2025 — 23 Apr 2026</td></tr>
+          <tr><td>Individual internet use (15+)</td><td class="num">98.3%</td><td class="num">2025</td><td>ICT Survey Report 2025 — 23 Apr 2026</td></tr>
+          <tr><td>Electricity access</td><td class="num">99.9%</td><td class="num">2024</td><td>Basic Amenities Survey Report — 24 Dec 2025</td></tr>
+        </tbody>
+      </table>
+      <p class="src">Median income is a household figure, not an individual wage; poverty is a share of households. 2024 figures stay labelled 2024 in this 2025 Annual Edition.</p>
+    </section>
   </div>
-
-  <h2 data-en="Where people live" data-id="Di mana penduduk tinggal">Where people live</h2>
-  <div class="card">
-    <h3 data-en="Population by island group, mid-2025" data-id="Penduduk menurut kelompok pulau, pertengahan 2025">Population by island group, mid-2025</h3>
-    <div class="chart" id="chartIslands"></div>
-    <p class="muted">Sums of the BPS mid-2025 provincial estimates (see <a href="provinces.html">Province Explorer</a>). Java: 158.08m (55.6%) on 6.6% of the land. Papua's six provinces together: 5.82m (2.0%) on 24.4% of the land.</p>
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <p>SELAT ATLAS — Malaysia National Statistics Atlas, 2025 Annual Edition. Data: DOSM and OpenDOSM (CC BY 4.0). Static site; no external requests, no tracking.</p>
   </div>
-
-  <h2 data-en="Work and wages" data-id="Pekerjaan dan upah">Work and wages</h2>
-  <div class="card">
-    <table class="data">
-      <tbody>
-        <tr><td>Open unemployment, Aug 2025</td><td class="num"><b>4.85%</b> (7.46m people)</td></tr>
-        <tr><td>Youth unemployment, ages 15–24, Aug 2025</td><td class="num"><b>16.9%</b></td></tr>
-        <tr><td>Part-time workers / underemployed, Aug 2025</td><td class="num">24.77% / 7.91% (11.60m)</td></tr>
-        <tr><td>Average monthly wage, Aug 2025</td><td class="num"><b>Rp3.33m</b></td></tr>
-        <tr><td>Formal workers, share of employment, Aug 2025</td><td class="num">42.20%</td></tr>
-      </tbody>
-    </table>
-    <p class="muted">Source: BPS Sakernas, August 2025 (BRS 5 Nov 2025). The headline rate is the lowest since the pandemic, but job quality lags: most new jobs are informal, and young people face a rate more than three times the national average.</p>
-    <p class="muted">Next: <a href="provinces.html">Provinces →</a> to compare regions, or <a href="sources.html">Sources →</a> for every release date.</p>
-  </div>
-
-  <footer class="site">
-    <p><b>NUSAMETRIK</b> — figures from BPS (Statistics Indonesia) and UNDP, each labelled with its period in <a href="sources.html">Sources &amp; methodology</a>. Works fully offline.</p>
-  </footer>
-</div>
-<script src="data.js"></script>
-<script src="main.js"></script>
+</footer>
+<script src="data-national.js"></script>
+<script src="data-states.js"></script>
+<script src="sources.js"></script>
+<script src="charts.js"></script>
+<script src="state-explorer.js"></script>
+<script src="core.js"></script>
 </body>
 </html>

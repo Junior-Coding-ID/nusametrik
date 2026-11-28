@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="SELAT ATLAS logo">
+  <rect x="2" y="2" width="60" height="60" rx="12" fill="#17243d"/>
+  <path d="M12 40 L24 24 L32 34 L40 22 L52 40" fill="none" stroke="#f3bc65" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M8 48 H56" stroke="#3567c0" stroke-width="4" stroke-linecap="round"/>
+  <circle cx="52" cy="40" r="3" fill="#85b3e4"/>
+</svg>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>State Explorer — SELAT ATLAS</title>
+<meta name="description" content="Compare all sixteen Malaysian states and federal territories on population, poverty, income and internet access. SELAT ATLAS, data from DOSM and OpenDOSM.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-page="states">
+<a class="skip" href="#main">Skip to content</a>
+<header class="masthead">
+  <div class="wrap masthead-in">
+    <a class="brand" href="index.html"><img src="logo.svg" alt="" width="30" height="30"><span>SELAT ATLAS<small>MALAYSIA NATIONAL STATISTICS ATLAS</small></span></a>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="mainnav">Menu</button>
+    <nav class="mainnav" id="mainnav" aria-label="Main navigation">
+      <a href="index.html">Overview</a>
+      <a href="economy.html">Economy</a>
+      <a href="people.html">People &amp; Living</a>
+      <a href="states.html" aria-current="page">State Explorer</a>
+    </nav>
+  </div>
+</header>
+<main id="main">
+  <div class="wrap">
+    <div class="page-head">
+      <span class="edition">2025 Annual Edition</span>
+      <h1>State Explorer</h1>
+      <p class="lede">All sixteen states and federal territories on four indicators — change the indicator and the map, ranking, comparison and benchmark all change with it.</p>
+    </div>
+    <div class="controls" role="group" aria-label="Explorer controls">
+      <div class="group">
+        <label id="indicator-label">Indicator</label>
+        <div class="seg" role="group" aria-labelledby="indicator-label">
+          <button type="button" data-indicator-btn="population" aria-pressed="true">Population 2025</button>
+          <button type="button" data-indicator-btn="poverty" aria-pressed="false">Poverty 2024</button>
+          <button type="button" data-indicator-btn="income" aria-pressed="false">Income 2024</button>
+          <button type="button" data-indicator-btn="internet" aria-pressed="false">Internet 2025</button>
+        </div>
+      </div>
+      <div class="group">
+        <label for="state-search">Search</label>
+        <input type="search" id="state-search" placeholder="State name or code…" aria-label="Search states by name or code">
+      </div>
+      <div class="group">
+        <label for="group-filter">Region</label>
+        <select id="group-filter">
+          <option value="all">All regions</option>
+          <option value="Peninsular">Peninsular</option>
+          <option value="East Malaysia">East Malaysia</option>
+        </select>
+      </div>
+      <div class="group">
+        <label for="sort-select">Sort</label>
+        <select id="sort-select">
+          <option value="desc">Highest first</option>
+          <option value="asc">Lowest first</option>
+          <option value="alpha">A–Z</option>
+        </select>
+      </div>
+      <button type="button" class="btn ghost" id="reset-btn">Reset</button>
+      <button type="button" class="btn" id="csv-btn">Download CSV</button>
+    </div>
+    <section class="card" aria-labelledby="explorer-title">
+      <h2 class="chart-title" id="explorer-title">State Explorer — Population 2025</h2>
+      <p class="chart-sub">Tile colour shows the size of the active indicator. Tiles are a schematic cartogram, not a geographic map. Select a tile to see that state's full profile.</p>
+      <div id="cartogram" class="cartogram"></div>
+      <p class="legend" id="cartogram-legend" style="margin-top:10px"></p>
+      <p class="cartogram-note">Kuala Lumpur and Putrajaya are separate regions for all four indicators. Regional GDP is not shown: the OpenDOSM GDP file merges them, so it cannot rank sixteen regions.</p>
+    </section>
+    <section class="card detail" id="state-detail" aria-label="Selected state detail" aria-live="polite"></section>
+    <section class="card" aria-labelledby="ranking-title">
+      <h2 class="chart-title" id="ranking-title">Ranking</h2>
+      <p class="chart-sub">All states for the active indicator, in the current sort order. The CSV export follows exactly this filtered, sorted table.</p>
+      <div id="ranking"></div>
+    </section>
+    <section class="card" aria-labelledby="compare-title">
+      <h2 class="chart-title" id="compare-title">Compare two states</h2>
+      <p class="chart-sub">Pick any two states; the bars and the difference update with the active indicator, against the national benchmark.</p>
+      <div class="compare">
+        <div>
+          <label for="compare-a">State A</label>
+          <select id="compare-a"></select>
+        </div>
+        <div>
+          <label for="compare-b">State B</label>
+          <select id="compare-b"></select>
+        </div>
+      </div>
+      <div id="comparison-out" style="margin-top:16px" aria-live="polite"></div>
+    </section>
+    <section class="card" id="sources" aria-labelledby="sources-title">
+      <h2 id="sources-title">Sources &amp; methodology</h2>
+      <ul class="src-list" id="sources-list"></ul>
+      <h3 style="margin-top:16px">Regional datasets</h3>
+      <ul class="src-list" id="datasets-list"></ul>
+      <h3 style="margin-top:16px">Methodology</h3>
+      <ul class="method">
+        <li><strong>Observation years are kept honest:</strong> poverty, income and Gini are 2024; population and internet are 2025. A 2024 figure is never relabelled 2025.</li>
+        <li><strong>National benchmarks are not averages of the sixteen regions:</strong> median income (RM7,017), poverty (5.1%) and internet (97.1%) come from the national publications.</li>
+        <li><strong>Kuala Lumpur and Putrajaya are fully urban.</strong> Where a rural figure does not exist for them, it is shown as not available — never as 0%.</li>
+        <li><strong>Household and individual internet differ:</strong> household access (97.1%) counts households; individual use (98.3%) counts people aged 15+ who used the internet in the last 3 months. Never merged.</li>
+        <li><strong>The “Malaysia” row in the OpenDOSM internet file is a national benchmark</strong>, not a seventeenth state.</li>
+        <li><strong>Tile positions are schematic.</strong> The cartogram places states in approximate geographic order; it is not a survey-accurate map.</li>
+      </ul>
+      <p class="footnote" id="licence-note"></p>
+    </section>
+  </div>
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <p>SELAT ATLAS — Malaysia National Statistics Atlas, 2025 Annual Edition. Data: DOSM and OpenDOSM (CC BY 4.0). Static site; no external requests, no tracking.</p>
+  </div>
+</footer>
+<script src="data-national.js"></script>
+<script src="data-states.js"></script>
+<script src="sources.js"></script>
+<script src="charts.js"></script>
+<script src="state-explorer.js"></script>
+<script src="core.js"></script>
+</body>
+</html>
