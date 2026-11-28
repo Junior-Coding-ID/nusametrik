@@ -1,62 +1,46 @@
-// NUSAMETRIK — hand-in program for the make.fun national statistics site.
-// Node 22, standard library only. It copies app/ and screenshots/ from this
-// repository into the output directory and writes dossier.json with
-// buildDossier from vendor/makefun-frontend.ts (the kit's copy, unchanged).
-// Output directory: MAKEFUN_OUTPUT_DIR, else MAKEFUN_OUTPUT, else /output.
-// It never writes into the repository itself: the grader mounts the repo
-// read-only, so every write below targets the output directory only.
-import { cpSync, existsSync, mkdirSync, rmSync, writeFileSync } from "node:fs";
-import { dirname, join, resolve } from "node:path";
+// SELAT ATLAS — build entry (Node 22+, standard library only).
+// Copies app/ and screenshots/ from beside this file into the output
+// directory and writes dossier.json via the vendored make.fun library.
+// Writes ONLY to MAKEFUN_OUTPUT_DIR ?? MAKEFUN_OUTPUT ?? "/output";
+// never to the working directory, never with Deno APIs, and it never
+// deletes the output directory itself.
+import { cpSync, existsSync, mkdirSync, readFileSync, readdirSync, statSync, writeFileSync } from "node:fs";
+import { join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { buildDossier } from "./vendor/makefun-frontend.ts";
 
-const REPO_ROOT = resolve(dirname(fileURLToPath(import.meta.url)));
+const here = fileURLToPath(new URL(".", import.meta.url));
+const out = process.env.MAKEFUN_OUTPUT_DIR ?? process.env.MAKEFUN_OUTPUT ?? "/output";
 
-function outputDir(): string {
-  const fromEnv =
-    process.env.MAKEFUN_OUTPUT_DIR || process.env.MAKEFUN_OUTPUT || "";
-  return resolve(fromEnv === "" ? "/output" : fromEnv);
+mkdirSync(out, { recursive: true });
+cpSync(join(here, "app"), join(out, "app"), { recursive: true });
+mkdirSync(join(out, "screenshots"), { recursive: true });
+if (existsSync(join(here, "screenshots"))) {
+  cpSync(join(here, "screenshots"), join(out, "screenshots"), { recursive: true });
 }
 
-function copyTree(source: string, target: string): void {
-  mkdirSync(target, { recursive: true });
-  cpSync(source, target, { recursive: true });
+writeFileSync(
+  join(out, "dossier.json"),
+  buildDossier(out, {
+    text_max_bytes: 163840,
+    screenshots: { max: 4, max_bytes: 262144 },
+    app_max_files: 993,
+    app_max_bytes: 16777216,
+  }),
+);
+
+// Verify what was written: the dossier must parse, its text must fit the
+// cap, and the entry point must exist. Log a one-line summary for the build.
+const dossier = JSON.parse(readFileSync(join(out, "dossier.json"), "utf8"));
+if (typeof dossier.text !== "string" || dossier.text.length > 163840) {
+  throw new Error("dossier text missing or over the 160 KiB cap");
 }
-
-function cleanDir(dir: string): void {
-  if (existsSync(dir)) rmSync(dir, { recursive: true, force: true });
-  mkdirSync(dir, { recursive: true });
+if (!existsSync(join(out, "app", "index.html"))) {
+  throw new Error("app/index.html missing from output");
 }
-
-// Dossier caps from this competition's gate: text 160 KiB, at most 4
-// screenshots of at most 256 KiB each, app at most 993 files / 16 MiB.
-const DOSSIER_CAPS = {
-  text_max_bytes: 163840,
-  screenshots: { max: 4, max_bytes: 262144 },
-  app_max_files: 993,
-  app_max_bytes: 16777216,
-  app_path_max_bytes: 1000,
-} as const;
-
-// Hand in the entry: fresh output dir, app/ + screenshots/ copied verbatim,
-// dossier.json built from exactly what was copied, so the dossier always
-// matches the handed-in files byte for byte.
-function handIn(): void {
-  const out = outputDir();
-  const appSource = join(REPO_ROOT, "app");
-  const shotsSource = join(REPO_ROOT, "screenshots");
-  if (!existsSync(appSource)) {
-    throw new Error("hand-in: no app/ directory in " + REPO_ROOT);
-  }
-  if (!existsSync(shotsSource)) {
-    throw new Error("hand-in: no screenshots/ directory in " + REPO_ROOT);
-  }
-  cleanDir(out);
-  copyTree(appSource, join(out, "app"));
-  copyTree(shotsSource, join(out, "screenshots"));
-  const dossier = buildDossier(out, DOSSIER_CAPS);
-  writeFileSync(join(out, "dossier.json"), dossier);
-  console.log("nusametrik: wrote " + out + " (dossier.json " + dossier.length + " bytes)");
-}
-
-handIn();
+console.log(
+  "SELAT ATLAS built: app=" + readdirSync(join(out, "app")).length + " files, " +
+  "screenshots=" + readdirSync(join(out, "screenshots")).length + ", " +
+  "dossier=" + statSync(join(out, "dossier.json")).size + " bytes, " +
+  "dossier-text=" + dossier.text.length + " chars",
+);
